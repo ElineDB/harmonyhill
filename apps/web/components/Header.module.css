@@ -1,0 +1,135 @@
+.bookNowHeader {
+    margin: 0.3rem;
+    padding: 0.3rem;
+    border: 2px solid white;
+    width: fit-content;
+    white-space: nowrap
+}
+
+.stickyBanner {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgba(17, 72, 47, 0.9);
+    text-align: center;
+    font-size: 0.8em;
+    z-index: 1000;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+
+.stickyBanner a {
+    color: white;
+    /* Bright orange for the link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.stickyBanner a:hover {
+    text-decoration: underline;
+}
+
+.mainNav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    align-items: center;
+
+    /* position on the top part of the video */
+    align-self: start;
+    /* Position over video and content */
+    z-index: 1;
+
+    padding: 0rem 0rem;
+
+    font-size: 1.2rem;
+    color: white;
+    background-color: none;
+}
+
+.mainNav ul {
+    list-style: none;
+    /* Remove default bullet points */
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    /* display: grid;
+    grid-template-columns: repeat(5, minmax(0, 2fr)); */
+    justify-content: space-between;
+}
+
+.mainNav li {
+    /* Display list items inline (horizontally)*/
+    display: inline;
+}
+
+.mainNav li a {
+    /* White text color */
+    text-decoration: none;
+    color: inherit;
+    /* Remove underline & purple color from links */
+    font-weight: bold;
+    /* Bold text */
+    padding: 0.5rem 1rem;
+    /* Add some padding to links */
+}
+
+.hamburger {
+    display: none;
+    text-align: right;
+}
+
+.mainNavLinks {
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    background-color: none;
+    padding: 20px 0;
+
+    z-index: 1000;
+}
+
+/* ✅ Responsive: On smaller screens */
+@media (max-width: 1000px) {
+    .mainNavLinks {
+        display: none;
+        /* Hide by default */
+        position: absolute;
+        top: 100%;
+        /* Sits right below the banner */
+        left: 0;
+        width: 100%;
+        background-color: rgba(17, 72, 47, 0.95);
+        /* Matches your brand green */
+        flex-direction: column;
+        padding: 20px 0;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    /* This class is what the JavaScript will toggle */
+    .mainNavLinks.active {
+        display: flex !important;
+    }
+
+    .mainNavLinks li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block !important;
+        margin-left: auto;
+        padding-right: 20px;
+        font-size: 2rem;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+}

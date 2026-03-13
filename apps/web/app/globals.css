@@ -19,32 +19,767 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
+
+  font-family: Quattrocento, sans-serif;
+  /* Set the default font */
+  line-height: 1.6;
+  font-size: 18px;
+  font-weight: 400;
+  color: #284650;
+  background-color: #E8E0D0;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
+.back-arrow {
+  font-size: 3rem;
+  color: rgb(43, 87, 63);
+  text-decoration: none;
+  vertical-align: middle;
+  margin: 10px 10px;
+}
+
+section {
+  background-color: #E8E0D0;
+}
+
+h2,
+p {
+  padding: 10px 0;
   margin: 0;
 }
 
-a {
-  color: inherit;
+h2 {
+  font-size: 3em;
+  font-weight: normal;
+  /* margin: 0; */
+}
+
+img {
+  max-width: 100%;
+}
+
+.green-link {
+  color: rgb(43, 87, 63);
+  font-weight: 800;
   text-decoration: none;
 }
 
-.imgDark {
+.white-link {
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.thank-you-note {
+  text-align: center;
+  width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: scroll;
+}
+
+.col-md-6 {
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.booking-button {
+  /* Position */
+  z-index: 1000;
+
+  width: 150px;
+  height: 60px;
+  /* display: inline-block; */
+
+  /* Shape & Appearance */
+  background-color: rgba(17, 72, 47, 0.9);
+
+  border-radius: 50px;
+  /* High radius creates the pill shape */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  /* Soft shadow makes it pop off the page */
+  transition: transform 0.2s ease-in-out;
+  /* Smooth hover effect */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Text */
+
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0rem 0.5rem 1rem 0.5rem;
+}
+
+.sub-cal-buttons {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.booking-button p {
+  padding: 0;
+}
+
+.sticky-button {
+  /* Position */
+  position: fixed;
+  bottom: 1.5em;
+  /* Increase distance from the edge slightly */
+  right: 1.5em;
+  /* Increase distance from the edge slightly */
+  z-index: 1000;
+
+  /* Shape & Appearance */
+  background-color: rgba(17, 72, 47, 0.9);
+
+  padding: 0.2em 0.8em;
+  /* Generous padding for a larger touch area */
+  border-radius: 50px;
+  /* High radius creates the pill shape */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  /* Soft shadow makes it pop off the page */
+  transition: transform 0.2s ease-in-out;
+  /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.sticky-button:hover,
+.booking-button:hover {
+  background-color: #8bb28e;
+  /* Subtle color change on hover */
+  transform: translateY(-2px);
+  /* Lifts the button slightly */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  /* Larger shadow on hover */
+}
+
+.sticky-button-left {
+  /* Position */
+  position: fixed;
+  bottom: 1.5em;
+  /* Increase distance from the edge slightly */
+  left: 1.5em;
+  /* Increase distance from the edge slightly */
+  z-index: 1000;
+
+  /* width:  1rem; */
+  height: 3.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+
+  /* Shape & Appearance */
+  background-color: rgba(17, 72, 47, 0.9);
+  padding: 0.75em 0.75em 0.75em 0.75em;
+  /*Generous padding for a larger touch area */
+  border-radius: 50px;
+  /* High radius creates the pill shape */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  /* Soft shadow makes it pop off the page */
+  transition: transform 0.2s ease-in-out;
+  /* Smooth hover effect */
+}
+
+.sticky-button,
+.sticky-button-left,
+.sticky-button a,
+.sticky-button p,
+.sticky-button-left a,
+.sticky-button-left p,
+.booking-button,
+.booking-button a {
+  font-family: inherit;
+  /* Takes the font from the body or parent */
+  text-decoration: none;
+  /* Removes the link underline if you want */
+  color: white;
+  /* Keeps the text color consistent */
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sticky-button-left:hover {
+  background-color: #8bb28e;
+  /* Subtle color change on hover */
+  transform: translateY(-2px);
+  /* Lifts the button slightly */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  /* Larger shadow on hover */
+}
+
+video::-webkit-controls-panel,
+video::-moz-controls-panel,
+video:-ms-controls-panel {
   display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.hero-video {
+  position: relative;
+  /* height: 100vh;
+  width: 100vw; */
+
+
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  font-style: normal;
+
+  width: 100%;
+  /* Use svh to prevent mobile "jumping" when the address bar hides */
+  min-height: 100svh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  /* This ensures the container has shape before the video loads */
+  aspect-ratio: 16 / 9;
+
+}
+
+.hero-video::after {
+  /* Adjust video opacity by overlaying a black box (0 for transparent, 1 for solid black) */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  z-index: 0;
+}
+
+
+.hero-video video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  object-fit: cover;
+
+}
+
+.nook-hh-logo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 1;
+  /*bring text forward over video*/
+  text-align: left;
+}
+
+.hh-nook-logo-container {
+  margin: 10px;
+  font-size: 40px;
+  line-height: 0.5;
+  font-family: 'Playfair Display SC', serif;
+  text-align: center;
+}
+
+
+
+.logo-container {
+  position: absolute;
+  margin: 0;
+  z-index: 1;
+  /*bring text forward over video*/
+  text-align: center;
+  height: auto;
+}
+
+.hotel-slogan {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.custom-rounded-img {
+
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  overflow: hidden;
+  position: relative;
+}
+
+.custom-rounded-img .carousel-caption {
+  position: absolute;
+  /* Absolute inside a Relative parent */
+  bottom: 0 !important;
+  /* Forces it to the very bottom edge */
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 !important;
+  /* Removes Bootstrap's default centering margins */
+  width: 100%;
+}
+
+.custom-rounded-img .carousel-caption p {
+  margin-bottom: 0;
+  bottom: 0 !important;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.margin-on {
+  padding: 0 10px;
+}
+
+#about-us {
+  padding: 30px 25%;
+}
+
+/* reduce padding for smaller screens */
+@media (max-width: 768px) {
+  #about-us {
+    padding: 20px 40px;
+    /* Fixed padding in pixels */
+  }
+}
+
+/*#about-us p {
+  padding: 0;
+} */
+
+#natures-kitchen {
+  padding-top: 20px;
+}
+
+#stay-in,
+ready-paradise {
+  padding-bottom: 20px;
+}
+
+#ready-paradise img {
+  padding: 20px;
+}
+
+.fixed-bg {
+  position: relative;
+  /* So the overlay semi transparent box gets correctly positioned */
+
+  background-size: cover;
+  /* Ensures the image covers the entire section */
+  background-position: center;
+  /* Centers the image */
+  background-attachment: fixed;
+  /* Keep the image fixed while scrolling */
+  color: white;
+  /* Changes text color for contrast */
+  padding: 50px 20px;
+  /* Adjusts padding */
+}
+
+.fixed-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Semi-transparent black overlay */
+  z-index: 1;
+  /* Ensure the overlay is on top */
+}
+
+
+.fixed-bg h2,
+.fixed-bg p,
+.fixed-bg details,
+.fixed-bg .three-panel-container,
+.fixed-bg .carousel {
+  position: relative;
+  /* Ensure the content is positioned relative to the section */
+  z-index: 2;
+  /* Ensure the content is above the overlay */
+}
+
+.three-panel img {
+  width: 100%;
+  height: 350px;
+  /* Set a fixed height */
+  object-fit: cover;
+  /* Crop the image to fit the container */
+
+}
+
+.section-title {
+  text-align: center;
+}
+
+.see-more-here {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 2em;
+}
+
+.see-more-here a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+#our-villas {
+  text-align: center;
+  background-image: url('/images/ricefield1.webp');
+}
+
+#the-nook {
+  text-align: center;
+  background-image: url('/images/ricefield1.webp');
+  /* todo: doesn't work with nook-deck, but why? */
+}
+
+#explore {
+  text-align: center;
+  background-image: url('/images/ricefield1.webp');
+}
+
+#faq {
+  background-image: url('/images/infinity-pool-jungle-view.avif');
+}
+
+#availability {
+  text-align: center;
+}
+
+.availability-text {
+  text-align: center;
+  display: inline-block;
+}
+
+.contact-us-text {
+  text-align: center;
+  display: inline-block;
+}
+
+
+#goodtoknow {
+  text-align: center;
+  /* background-color: rgb(1, 49, 39); */
+  color: rgb(1, 49, 39);
+}
+
+
+
+@media(min-width:992px) {
+  .heart-image-container {
+    position: relative;
+    /* Makes the container relative to position its children */
+    height: 500px;
   }
 
-  .imgLight {
-    display: none;
+  .heart-image-container img {
+    position: absolute;
+    /* Position the images absolutely */
+    left: 0;
+    width: 80%;
+    /* Ensures both images are responsive */
   }
-  .imgDark {
-    display: unset;
+
+  .heart-image-container img:first-child {
+    z-index: 1;
+    left: 20%;
+    /* Ensures the first image is below the second */
   }
+
+  .heart-image-container img:last-child {
+    top: 35%;
+    /* Move the second image downwards by 50% */
+    z-index: 2;
+    /* Ensures the second image is above the first */
+  }
+}
+
+@media(max-width:992px) {
+  .heart-image-container {
+    position: relative;
+    /* Makes the container relative to position its children */
+    margin-bottom: 50%;
+  }
+
+  .heart-image-container img {
+    position: absolute;
+    /* Position the images absolutely */
+    left: 0;
+    width: 50%;
+    /* Ensures both images are responsive */
+  }
+
+  .heart-image-container img:first-child {
+    z-index: 1;
+    left: 10%;
+    /* Ensures the first image is below the second */
+  }
+
+  .heart-image-container img:last-child {
+    top: 40%;
+    left: 40%;
+    /* Move the second image downwards by 50% */
+    z-index: 2;
+    /* Ensures the second image is above the first */
+  }
+}
+
+#goodtoknow-points {
+  align-content: center;
+  text-align: left;
+}
+
+.leaf-bullets {
+  padding: 0;
+  list-style: none;
+}
+
+.leaf-bullets-li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  /* Optional: Add space between items */
+
+  position: relative;
+  padding-left: 10px;
+  /* Add space for the leaf icon */
+  /* Aligns the first line of text with the icon */
+}
+
+
+.leaf-bullets svg {
+  flex-shrink: 0;
+  /* Prevents the leaf from getting squashed */
+  width: 24px;
+  /* Adjust size as needed */
+  height: auto;
+  margin-right: 15px;
+  /* Space between leaf and text */
+  margin-top: 4px;
+  /* Nudges leaf down slightly to align with first line */
+  fill: rgba(17, 72, 47, 0.9);
+}
+
+.leaf-bullets-li ul {
+  display: block;
+  list-style: circle;
+  margin-left: 25px;
+  /* round bullet point move right */
+  padding-left: 10px;
+  /* distance between round bullet and text */
+  padding-top: 0px;
+}
+
+#leaf-divider {
+
+  background-color: #E8E0D0;
+  /* White background */
+
+  padding: 40px 0;
+
+}
+
+#leaf-divider img {
+  max-height: 100px;
+  /* Set max height to 20px */
+  width: 50%;
+  /* Maintain the aspect ratio */
+  display: block;
+  /* Ensures the image takes up only as much space as needed */
+  margin: 0 auto;
+  /* Center the image horizontally */
+  /* Optional: Adds some padding if needed */
+
+}
+
+.faq-item summary {
+  font-size: 1.5em;
+}
+
+#nook-title {
+  font-size: 56px;
+  line-height: 1;
+  font-family: 'Playfair Display SC', serif;
+}
+
+#book-now {
+  text-align: left;
+  display: inline-block;
+}
+
+#inclusions {
+  text-align: left;
+  display: inline-block;
+}
+
+#contact-us {
+  text-align: center;
+  background-color: rgb(1, 49, 39);
+  color: white;
+}
+
+#contact-us a {
+  color: white;
+}
+
+#insta {
+  font-size: 2.5rem;
+}
+
+/* .explore-container p {
+  padding: 10px 20px;
+} */
+
+
+
+/* Villa Dropdown Button */
+.dropbtn {
+  font-size: 1.2rem;
+  color: white;
+  background-color: rgba(17, 72, 47, 0.9);
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+  text-decoration: underline;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(17, 72, 47, 0.9);
+  color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+
+.calendar-row-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  /* margin: 0 auto;  */
+  max-width: 100%;
+}
+
+.calendars-row-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.calendar {
+  /* width: auto; */
+  /* justify-content: center; */
+  /* margin: 0 auto; */
+  flex-shrink: 0;
+  padding: 0 10px;
+
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 1em;
+  border-collapse: collapse;
+  font-family: sans-serif;
+}
+
+.calendar table {
+  width: 40%;
+}
+
+.calendar th {
+  width: calc(100% / 7);
+  background-color: #E8E0D0;
+  /* Light grey for header background */
+  color: #333;
+  /* Dark grey for header text */
+  border: 1px solid #ccc;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.calendar td {
+  width: calc(100% / 7);
+  /* border: 1px solid #ccc; */
+  padding: 0.2rem;
+  text-align: center;
+  background-color: #E8E0D0;
+  /* Default white background for available days initially */
+  color: #E8E0D0;
+  /* Default dark grey for available day text */
+}
+
+.calendar td.unavailable {
+  background-color: #cac5c5;
+  /* Grey for unavailable days */
+  color: black;
+  /* Light grey for unavailable day text */
+}
+
+.calendar td.available {
+  background-color: #248352;
+  /* Your green for available days */
+  color: #fff;
+  /* White text for available days */
+  cursor: pointer;
+  /* Indicate availability on hover (optional) */
+}
+
+.arrow {
+  /* display: inline-block; */
+  line-height: 1;
+  user-select: none;
+
+  font-size: 5rem;
+  color: #284650;
+  cursor: pointer;
+  transition: transform 0.2s;
+  padding: 0.1em;
+}
+
+#inclusions div {
+  padding-top: 10px;
 }

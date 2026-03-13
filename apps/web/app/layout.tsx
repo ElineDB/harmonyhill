@@ -1,14 +1,25 @@
 import type { Metadata } from "next";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import localFont from "next/font/local";
+import { Quattrocento } from 'next/font/google';
 import "./globals.css";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+    src: "./fonts/GeistVF.woff",
+    variable: "--font-geist-sans",
 });
+
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+    src: "./fonts/GeistMonoVF.woff",
+    variable: "--font-geist-mono",
+});
+
+// Configure the font
+const quattrocento = Quattrocento({
+    weight: ['400', '700'], // Choose the weights you need
+    subsets: ['latin'],
+    display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -23,8 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${quattrocento.className}`}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
