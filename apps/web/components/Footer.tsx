@@ -15,8 +15,8 @@ export default function Footer() {
                 <div className="contact-us-text col-md-8">
                     <p><b>
                         For direct bookings, questions, suggestions or to discuss partnerships, please contact us on
-                        <Link href="https://wa.me/message/TVA3I5GFI5VLO1">WhatsApp</Link> or
-                        <Link href="mailto:harmonyhillbali@gmail.com" target="_blank">harmonyhillbali@gmail.com</Link>
+                        {" "}<Link href="https://wa.me/message/TVA3I5GFI5VLO1">WhatsApp</Link>{" "} or
+                        {" "}<Link href="mailto:harmonyhillbali@gmail.com" target="_blank">harmonyhillbali@gmail.com</Link>{" "}
                         or reach out on social media.
                     </b></p>
                 </div>
