@@ -4,22 +4,14 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react'; // Or your React Icons
 import RoundedImage from "./RoundedImage";
+import {ImageProps} from "@/types";
 import styles from "./Carousel.module.css";
 
-const images = [
-    { src: '/images/ricefield1.webp', alt: 'Harmony Hill Rice Fields' },
-    { src: '/images/villa-interior.webp', alt: 'Villa Interior' },
-    { src: '/images/pool-view.webp', alt: 'Infinity Pool' },
+interface Deck {
+    images: ImageProps[];
+}
 
-    // villa 1
-    { src: '/images/pool-deck-view-smaller.avif', alt: 'Infinity Pool', description: "How about some forest bathing?" },
-    { src: '/images/bdr-3-villa-1.jpeg', alt: 'bed room', description: "Let the early morning light wash over your face as you wake up" },
-    { src: '/images/living-room-villa-1.avif', alt: 'spacious living room', description: "Convene with your family and friends over breakfast, in this spacious, brightliving room" },
-    { src: '/images/villa-1-taking-bath.avif', alt: 'luxurious copper bath tub',  description: "Take a relaxing hot soak in a handmade copper bathtub"},
-    { src: '/images/infinity-pool-view.webp', alt: 'jungle infinity pool',  description: "Indulge in an afternoon dip after a long day of relaxing or adventures"},
-];
-
-export default function Carousel() {
+export default function Carousel({images} : Deck) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
     const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
