@@ -7,6 +7,7 @@ import AboutUs from "@/components/AboutUs";
 import NaturesKitchen from "@/components/NaturesKitchen";
 import StayIn from "@/components/StayIn";
 import Explore from "@/components/Explore";
+import ReadyForParadise from "@/components/ReadyForParadise";
 
 type Props = Omit<ImageProps, "src"> & {
     srcLight: string;
@@ -34,8 +35,8 @@ export default function Home() {
                 <NaturesKitchen />
                 <StayIn />
                 <Explore />
+                <ReadyForParadise />
             </main>
-
         </div>
     );
 }

@@ -1,0 +1,48 @@
+.section {
+    padding: 0 10px;
+}
+
+.sectionBody {
+    margin: 0;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr; /* Stacked by default */
+    gap: 2rem;
+}
+
+.supportUsText {
+    background-color: rgba(17, 72, 47, 0.95); 
+    color: white; 
+    border-radius: 10px; 
+    text-align: center;
+    padding: 5px;
+}
+
+.textContent {
+    margin: 0;
+    align-items: center;
+}
+
+.desktopOnlyImage {
+    display: none;
+}
+
+.mobileOnlyContent {
+    display: block; /* Visible on mobile */
+}
+
+@media (min-width: 992px) {
+    .sectionBody {
+        /* Equivalent to col-lg-6 (splitting the parent in half) */
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    /* Equivalent to d-lg-block */
+    .desktopOnlyImage {
+        display: block;
+    }
+
+    .mobileOnlyContent {
+        display: none; /* Disappears on desktop (992px+) */
+    }
+}
