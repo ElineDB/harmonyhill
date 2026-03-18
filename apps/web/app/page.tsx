@@ -9,6 +9,7 @@ import StayIn from "@/components/StayIn";
 import Explore from "@/components/Explore";
 import ReadyForParadise from "@/components/ReadyForParadise";
 import Availability from "@/components/Availability";
+import GoodToKnow from "@/components/GoodToKnow";
 
 type Props = Omit<ImageProps, "src"> & {
     srcLight: string;
@@ -47,6 +48,8 @@ export default function Home() {
                 <div id="leaf-divider">
                     <img src="/images/leaf-divider.png" alt="leafy divider" />
                 </div>
+
+                <GoodToKnow />
             </main>
         </div>
     );

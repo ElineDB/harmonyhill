@@ -351,67 +351,6 @@ ready-paradise {
     color: rgb(1, 49, 39);
 }
 
-
-
-@media(min-width:992px) {
-    .heart-image-container {
-        position: relative;
-        /* Makes the container relative to position its children */
-        height: 500px;
-    }
-
-    .heart-image-container img {
-        position: absolute;
-        /* Position the images absolutely */
-        left: 0;
-        width: 80%;
-        /* Ensures both images are responsive */
-    }
-
-    .heart-image-container img:first-child {
-        z-index: 1;
-        left: 20%;
-        /* Ensures the first image is below the second */
-    }
-
-    .heart-image-container img:last-child {
-        top: 35%;
-        /* Move the second image downwards by 50% */
-        z-index: 2;
-        /* Ensures the second image is above the first */
-    }
-}
-
-@media(max-width:992px) {
-    .heart-image-container {
-        position: relative;
-        /* Makes the container relative to position its children */
-        margin-bottom: 50%;
-    }
-
-    .heart-image-container img {
-        position: absolute;
-        /* Position the images absolutely */
-        left: 0;
-        width: 50%;
-        /* Ensures both images are responsive */
-    }
-
-    .heart-image-container img:first-child {
-        z-index: 1;
-        left: 10%;
-        /* Ensures the first image is below the second */
-    }
-
-    .heart-image-container img:last-child {
-        top: 40%;
-        left: 40%;
-        /* Move the second image downwards by 50% */
-        z-index: 2;
-        /* Ensures the second image is above the first */
-    }
-}
-
 #goodtoknow-points {
     align-content: center;
     text-align: left;

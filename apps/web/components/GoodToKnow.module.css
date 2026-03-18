@@ -1,0 +1,86 @@
+.section {
+    padding: 0 10px;
+}
+
+.sectionBody {
+    margin: 0;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.goodToKnowText {
+    text-align: left;
+    width: 100%;
+}
+
+@media(min-width:992px) {
+    .goodToKnowText {
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%;
+    }
+
+    .heartImageContainer {
+        position: relative;
+        /* Makes the container relative to position its children */
+        height: 500px;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    .heartImageContainer img {
+        position: absolute;
+        /* Position the images absolutely */
+        left: 0;
+        width: 80%;
+        /* Ensures both images are responsive */
+    }
+
+    .heartImageContainer img:first-child {
+        z-index: 1;
+        left: 20%;
+        /* Ensures the first image is below the second */
+    }
+
+    .heartImageContainer img:last-child {
+        top: 35%;
+        /* Move the second image downwards by 50% */
+        z-index: 2;
+        /* Ensures the second image is above the first */
+    }
+}
+
+@media(max-width:992px) {
+    .sectionBody {
+        flex-direction: column;
+    }
+
+    .heartImageContainer {
+        position: relative;
+        /* Makes the container relative to position its children */
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .heartImageContainer img {
+        position: absolute;
+        /* Position the images absolutely */
+        left: 0;
+        width: 50%;
+        /* Ensures both images are responsive */
+    }
+
+    .heartImageContainer img:first-child {
+        z-index: 1;
+        left: 10%;
+        /* Ensures the first image is below the second */
+    }
+
+    .heartImageContainer img:last-child {
+        top: 40%;
+        left: 40%;
+        /* Move the second image downwards by 50% */
+        z-index: 2;
+        /* Ensures the second image is above the first */
+    }
+}
