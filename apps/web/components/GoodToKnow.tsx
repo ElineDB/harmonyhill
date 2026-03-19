@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from "./GoodToKnow.module.css";
 
 export default function GoodToKnow() {
@@ -11,8 +12,8 @@ export default function GoodToKnow() {
 
             <div className={styles.sectionBody}>
                 <div className={styles.heartImageContainer}>
-                    <img src="/images/smileyinsect.avif" alt="smiling insect" className="img-fluid" />
-                    <img src="/images/cats-heart-small.avif" alt="harmony hill kittens" className="img-fluid" />
+                    <Image src="/images/smileyinsect.avif" alt="smiling insect" className="img-fluid" />
+                    <Image src="/images/cats-heart-small.avif" alt="harmony hill kittens" className="img-fluid" />
                 </div>
 
                 <div id="goodtoknow-points" className={styles.goodToKnowText}>

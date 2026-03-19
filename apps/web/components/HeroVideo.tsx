@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import styles from "./HeroVideo.module.css";
 
 export default function HeroVideo() {
@@ -14,11 +15,11 @@ export default function HeroVideo() {
             </video>
 
             <div className={styles.videoElement}>
-                <img src="/images/hero-image-mobile-sharp.avif" alt="Harmony Hill Retreat" width="800" height="1200" fetchPriority="high" />
+                <Image src="/images/hero-image-mobile-sharp.avif" alt="Harmony Hill Retreat" width="800" height="1200" fetchPriority="high" />
             </div>
 
             <div className={styles.overlay}>
-                <img src="/images/logo-white-transparent-background.avif" alt="Harmony Hill Logo" width="540" height="540"
+                <Image src="/images/logo-white-transparent-background.avif" alt="Harmony Hill Logo" width="540" height="540"
                     fetchPriority="high" className={styles.logo} />
                 <h1 className={styles.slogan}>Two Private Villas in the heart of Bali <br /> 100% Vegan</h1>
             </div>

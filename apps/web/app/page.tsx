@@ -9,6 +9,7 @@ import ReadyForParadise from "@/components/ReadyForParadise";
 import Availability from "@/components/Availability";
 import GoodToKnow from "@/components/GoodToKnow";
 import Faq from "@/components/Faq";
+import Image from 'next/image';
 
 export default function Home() {
     return (
@@ -23,13 +24,13 @@ export default function Home() {
                 <ReadyForParadise />
 
                 <div id="leaf-divider">
-                    <img src="/images/leaf-divider.png" alt="leafy divider" />
+                    <Image src="/images/leaf-divider.png" alt="leafy divider" />
                 </div>
 
                 <Availability />
 
                 <div id="leaf-divider">
-                    <img src="/images/leaf-divider.png" alt="leafy divider" />
+                    <Image src="/images/leaf-divider.png" alt="leafy divider" />
                 </div>
 
                 <GoodToKnow />
