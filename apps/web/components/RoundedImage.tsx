@@ -13,11 +13,13 @@ export default function RoundedImage({ src, alt, description }: ImageProps) {
                 alt={alt}
                 fill
             />
-            <div className={styles.caption}>
-                <p>
-                    {description}
-                </p>
-            </div>
+            {description && (
+                <div className={styles.caption}>
+                    <p>
+                        {description}
+                    </p>
+                </div>
+            )}
         </div>
     );
 }
