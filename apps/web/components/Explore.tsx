@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Carousel from "./Carousel";
+import styles from "./Explore.module.css";
 
 const images = [
     {src: "/images/gunung-kawi-resize.avif", alt: "Gunung Kawi", description: "Immerse yourself in the sacred stillness of Gunung Kawi, the Valley of The Balinese Kings, or partake in a purification ritual at Tirta Empul, Bali's largest spring water temple. Both just 5mins drive away"},
@@ -11,10 +12,11 @@ const images = [
 
 export default function Explore() {
     return (
-        <section id="explore" className="fixed-bg three-panel">
+        <section id="explore" className={styles.sectionBackground}>
             <h2 className="section-title">Explore</h2>
             <p>Our team will be more than happy to help you plan excursions to Bali's most beloved spots as well as local
-                hidden gems.</p>
+                hidden gems.
+            </p>
 
             <Carousel images={images}/> 
 
