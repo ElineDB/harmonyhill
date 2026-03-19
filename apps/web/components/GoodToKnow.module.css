@@ -59,7 +59,7 @@
         position: relative;
         /* Makes the container relative to position its children */
         width: 100%;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 2 / 1;
     }
 
     .heartImageContainer img {

@@ -1,0 +1,31 @@
+.sectionBackground {
+    text-align: center;
+    background-image: url('/images/ricefield1.webp');
+    isolation: isolate;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;   
+}
+
+.sectionBackground::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.faqItem summary {
+    font-size: 1.5em;
+}
+
+.faqAnswer {
+    text-align: center;
+    display: inline-block;
+    width: 83.333333%;
+}

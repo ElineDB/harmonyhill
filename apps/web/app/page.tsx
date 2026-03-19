@@ -10,6 +10,7 @@ import Explore from "@/components/Explore";
 import ReadyForParadise from "@/components/ReadyForParadise";
 import Availability from "@/components/Availability";
 import GoodToKnow from "@/components/GoodToKnow";
+import Faq from "@/components/Faq";
 
 type Props = Omit<ImageProps, "src"> & {
     srcLight: string;
@@ -50,6 +51,7 @@ export default function Home() {
                 </div>
 
                 <GoodToKnow />
+                <Faq />
             </main>
         </div>
     );

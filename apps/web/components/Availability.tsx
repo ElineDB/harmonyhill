@@ -11,7 +11,7 @@ export default function Availability() {
             <p>
                 <strong>2 nights minimum stay</strong>
             </p>
-            <div className="availability-text col-10 col-md-8">
+            <div className="availabilityText">
                 <p>Please review the available dates below and navigate to our {" "}<Link href="https://harmonyhill.reserveonline.id/book/1245" className="green-link">booking engine</Link>{" "} to make
                     a reservation. 
                     <br /> You can also reach us on

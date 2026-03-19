@@ -326,11 +326,6 @@ ready-paradise {
     /* todo: doesn't work with nook-deck, but why? */
 }
 
-#explore {
-    text-align: center;
-    background-image: url('/images/ricefield1.webp');
-}
-
 #faq {
     background-image: url('/images/infinity-pool-jungle-view.avif');
 }
@@ -417,10 +412,6 @@ ready-paradise {
     /* Center the image horizontally */
     /* Optional: Adds some padding if needed */
 
-}
-
-.faq-item summary {
-    font-size: 1.5em;
 }
 
 #nook-title {
