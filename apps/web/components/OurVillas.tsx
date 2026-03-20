@@ -27,11 +27,12 @@ export default function OurVillas() {
 
                 <div>
                     <h3 className="section-title">Harmony Hill</h3>
-                    <span>The perfect retreat for families or groups. Our expansive villa features three private
+                    <div className={styles.villaDescription}>
+                        The perfect retreat for families or groups. Our expansive villa features three private
                         bedrooms, each with its own ensuite bathroom. Designed with soaring 5-meter
                         ceilings, the home flows onto a grand wooden deck overlooking a private infinity pool suspended over
                         the emerald rice paddies and lush jungle valley.
-                    </span>
+                    </div>
 
                     <div className={styles.featuresContainer}>
                         <div className={styles.featureItem}>
@@ -94,12 +95,12 @@ export default function OurVillas() {
 
                 <div>
                     <h3 className="section-title">The Jungle Nook</h3>
-                    <span>
+                    <div className={styles.villaDescription}>
                         This spacious one-bedroom cottage features a deep-soak bathtub positioned for starlit jungle views
                         and a private wooden deck that floats above the green valley. Whether you're enjoying the vista of
                         tiered rice paddies or falling asleep to the natural jungle symphony, every corner is designed for
                         deep connection with nature
-                    </span>
+                    </div>
 
                     <div className={styles.featuresContainer}>
                         <div className={styles.featureItem}>

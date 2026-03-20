@@ -9,6 +9,8 @@
     margin: 0 auto;
     text-align: center;
     color: white;
+    height: 18rem;
+    overflow-y: auto;
 }
 
 .featureItem {
@@ -79,6 +81,10 @@
 .villaRow {
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: 2rem;
+}
+
+.villaDescription {
+    height: 10rem;
+    overflow-y: auto;
 }

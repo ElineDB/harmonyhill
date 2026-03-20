@@ -1,7 +1,7 @@
 'use client';
 import React, { useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import Image from 'next/image';
+import Autoplay from 'embla-carousel-autoplay';
 import { ChevronLeft, ChevronRight } from 'lucide-react'; // Or your React Icons
 import RoundedImage from "./RoundedImage";
 import {ImageProps} from "@/types";
@@ -12,7 +12,13 @@ interface Deck {
 }
 
 export default function Carousel({images} : Deck) {
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+    const autoplayOptions = { 
+        delay: 5000, 
+        stopOnInteraction: false, // Stop if guest clicks a slide
+        stopOnMouseEnter: true,   // Pauses when hovering
+    };
+
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay(autoplayOptions)]);
 
     const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
     const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
