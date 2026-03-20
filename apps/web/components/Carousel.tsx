@@ -1,5 +1,5 @@
 'use client';
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { ChevronLeft, ChevronRight } from 'lucide-react'; // Or your React Icons
@@ -12,8 +12,12 @@ interface Deck {
 }
 
 export default function Carousel({images} : Deck) {
+    const max = 6000;
+    const min = 4000;
+    const rotationInterval = useMemo(() => Math.floor(Math.random() * (max - min + 1)) + min, []);
+
     const autoplayOptions = { 
-        delay: 5000, 
+        delay: rotationInterval, 
         stopOnInteraction: false, // Stop if guest clicks a slide
         stopOnMouseEnter: true,   // Pauses when hovering
     };
