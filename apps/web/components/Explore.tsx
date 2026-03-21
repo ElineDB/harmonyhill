@@ -24,8 +24,13 @@ export default function Explore() {
             </div>
 
             <div className={styles.hideOnSmallScreens}>
-                {images.map((image) => {
-                    return <RoundedImage src={image.src} alt={image.alt} description={image.description}/>
+                {images.map((image, index) => {
+                    return <RoundedImage 
+                        key={`explore-image-${index}`} 
+                        src={image.src} 
+                        alt={image.alt} 
+                        description={image.description}
+                    />
                 })}
             </div>
 
