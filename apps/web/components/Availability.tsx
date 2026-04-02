@@ -4,9 +4,6 @@ import styles from "./Availability.module.css";
 import {makeAdapter, CollectionFilter} from "@/packages/database";
 import {toDateTime, today} from "@/packages/utils";
 
-//todo: import { getBookedDates } from "@harmonyhill/database";
-// parent to the calendar. Should i remove "use client" here?
-
 export default async function Availability() {
 
     const adapter = await makeAdapter();
@@ -36,8 +33,7 @@ export default async function Availability() {
     }
 
     const hhBookedDatesSerialized = await getBookedDates("harmony hill");
-    //const dates_ = dates.map((d) => new Date(d));
-    
+    const jnBookedDatesSerialized = await getBookedDates("the jungle nook");
     //console.log(bookings);
 
     return (
@@ -57,7 +53,7 @@ export default async function Availability() {
             </div>
             <div className={styles.calendarsRowWrapper}>
                 <BookingCalendar title="Harmony Hill" bookedDatesSerialized={hhBookedDatesSerialized}/>
-                <BookingCalendar title="The Jungle Nook" bookedDatesSerialized={[]}/>
+                <BookingCalendar title="The Jungle Nook" bookedDatesSerialized={jnBookedDatesSerialized}/>
             </div>
             <div className="sub-cal-buttons">
                 <div className="booking-button">

@@ -19,8 +19,8 @@ export default function BookingCalendar({ title, bookedDatesSerialized }: Bookin
     const [bookedDates, setBookedDates] = useState<Date[]>(bookedDates_);
 
     const disabledDays = [
-        ...bookedDates,
-        { before: new Date() }
+        ...bookedDates, // already booked by other guests
+        { before: new Date() } // can't book for past dates
     ];
 
     /**
