@@ -16,6 +16,7 @@ const jnImages = [
     { src: '/images/nook-bath.jpeg', alt: 'copper bath tub', description: "Could this be the best bath in Bali? We sure think so ^_^" },
     { src: '/images/nook-bed-view-resized.avif', alt: 'The Jungle Nook bedroom', description: "The Jungle Nook is designed to let nature flow inside" },
     { src: '/images/nook-deck.jpeg', alt: 'The Jungle Nook wooden decking', description: "A private deck with gorgeous valley views" },
+    { src: '/images/nook-deck-view.avif', alt: 'The Jungle Nook wooden decking', description: "A private deck with gorgeous valley views" },
     { src: '/images/nook-bed-swans.avif', alt: 'Enjoy your secluded cottage with private kitchen', description: "Enjoy our cosy cottage with private kitchen" },
 ];
 
