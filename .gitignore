@@ -36,3 +36,7 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+harmonyhill-1-service-account-key.json
+
+*.log
