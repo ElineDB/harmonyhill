@@ -9,6 +9,7 @@
         "name": "Debug Harmony Dev",
         "request": "launch",
         "command": "npm run dev",
-        "cwd": "${workspaceFolder}"
+        "cwd": "${workspaceFolder}",
+        "envFile": "${workspaceFolder}/.env"
     }]
 }

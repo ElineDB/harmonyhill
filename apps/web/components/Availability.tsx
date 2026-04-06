@@ -14,6 +14,7 @@ export default async function Availability() {
             ["checkInAt", ">=", today()]
         ];
         const bookings = await adapter.get("bookings", filters);
+        //console.log(bookings);
     
         let dates = [];
         for(const booking of bookings) {
@@ -34,7 +35,6 @@ export default async function Availability() {
 
     const hhBookedDatesSerialized = await getBookedDates("harmony hill");
     const jnBookedDatesSerialized = await getBookedDates("the jungle nook");
-    //console.log(bookings);
 
     return (
         <section id="availability">
