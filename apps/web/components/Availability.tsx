@@ -1,43 +1,9 @@
 import Link from 'next/link';
 import BookingCalendar from './BookingCalendar';
+import { Suspense } from 'react';
 import styles from "./Availability.module.css";
-import {makeAdapter, CollectionFilter} from "@/packages/database";
-import {toDateTime, today} from "@/packages/utils";
 
-export default async function Availability() {
-
-    const adapter = await makeAdapter();
-
-    const getBookedDates = async(house : string) : Promise<number[]> => {
-        const todayDate = today();
-
-        const filters : CollectionFilter[] = [
-            ["house", "==", house],
-            ["checkOutAt", ">=", todayDate]
-        ];
-        const bookings = await adapter.get("bookings", filters);
-        //console.log(bookings);
-    
-        let dates = [];
-        for(const booking of bookings) {
-            let cursor = toDateTime(booking.checkInAt);
-            if(!cursor) continue;
-
-            const end = toDateTime(booking.checkOutAt);
-            if(!end) continue;
-
-            while (cursor < end) {
-                dates.push(cursor.toMillis());
-                cursor = cursor.plus({ days: 1 });
-            }
-        }
-
-        return dates;
-    }
-
-    const hhBookedDatesSerialized = await getBookedDates("harmony hill");
-    const jnBookedDatesSerialized = await getBookedDates("the jungle nook");
-
+export default function Availability() {
     return (
         <section id="availability">
             <h2 className="section-title">Availability</h2>
@@ -54,8 +20,14 @@ export default async function Availability() {
                 </p>
             </div>
             <div className={styles.calendarsRowWrapper}>
-                <BookingCalendar title="Harmony Hill" bookedDatesSerialized={hhBookedDatesSerialized}/>
-                <BookingCalendar title="The Jungle Nook" bookedDatesSerialized={jnBookedDatesSerialized}/>
+                {/* Loading booking data asynchronously in the server */}
+                <Suspense fallback={<div className="skeleton-loader">Loading dates...</div>}>
+                    <BookingCalendar title="Harmony Hill"/>
+                </Suspense>
+
+                <Suspense fallback={<div className="skeleton-loader">Loading dates...</div>}>
+                    <BookingCalendar title="The Jungle Nook"/>
+                </Suspense>
             </div>
             <div className="sub-cal-buttons">
                 <div className="booking-button">

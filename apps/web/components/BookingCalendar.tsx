@@ -1,69 +1,49 @@
-'use client';
-
-import { useState } from "react";
-import { DateRange, DayPicker } from 'react-day-picker';
-import { isWithinInterval, eachDayOfInterval } from 'date-fns';
-import "react-day-picker/dist/style.css";
-import styles from "./BookingCalendar.module.css";
+import BookingCalendarClient from "./BookingCalendarClient";
+import {toDateTime, today} from "@/packages/utils";
+import {makeAdapter, CollectionFilter} from "@/packages/database";
 
 interface BookingCalendarProp {
-    title: string,
-    bookedDatesSerialized: number[]
+    title: string
 }
 
 // todo: pass the booked dates down as a prop
-export default function BookingCalendar({ title, bookedDatesSerialized }: BookingCalendarProp) {
-    const bookedDates_ = bookedDatesSerialized.map((epoch) => new Date(epoch));
+export default async function BookingCalendar({ title }: BookingCalendarProp) {
+    
+    const adapter = await makeAdapter();
 
-    const [selected, setSelected] = useState<DateRange>();
-    const [bookedDates, setBookedDates] = useState<Date[]>(bookedDates_);
+    const getBookedDates = async(house : string) : Promise<number[]> => {
+        const todayDate = today();
 
-    const disabledDays = [
-        ...bookedDates, // already booked by other guests
-        { before: new Date() } // can't book for past dates
-    ];
+        const filters : CollectionFilter[] = [
+            ["house", "==", house.toLowerCase()],
+            ["checkOutAt", ">=", todayDate]
+        ];
+        const bookings = await adapter.get("bookings", filters);
+        //console.log(bookings);
+    
+        let dates = [];
+        for(const booking of bookings) {
+            let cursor = toDateTime(booking.checkInAt);
+            if(!cursor) continue;
 
-    /**
-     * Check if any dates in selected range are already taken
-     */
-    const handleSelect = (range: DateRange | undefined) => {
-        if (!range?.from || !range?.to) {
-            setSelected(range);
-            return;
+            const end = toDateTime(booking.checkOutAt);
+            if(!end) continue;
+
+            while (cursor < end) {
+                dates.push(cursor.toMillis());
+                cursor = cursor.plus({ days: 1 });
+            }
         }
 
-        const allDaysInRange = eachDayOfInterval({ start: range.from, end: range.to });
-
-        const hasOverlap = allDaysInRange.some(day =>
-            bookedDates.some(bookedDate => day.getTime() === bookedDate.getTime())
-        )
-
-        if (hasOverlap) {
-            setSelected(undefined);
-        } else {
-            setSelected(range);
-        }
+        return dates;
     }
 
-    const calendarStyle = {
-        "--rdp-accent-color": "rgba(17, 72, 47, 0.9)",
-    } as React.CSSProperties;
+    const bookedDatesSerialized = await getBookedDates(title);
 
     return (
         <div>
             <h3>{title}</h3>
-            <DayPicker
-                mode='range'
-                className='rdp'
-                disabled={disabledDays}
-                onSelect={handleSelect}
-                selected={selected}
-                style={calendarStyle}
-                modifiers={{ booked: bookedDates }}
-                modifiersClassNames={{
-                    booked: styles.bookedDayStyle || ""
-                }}
-            />
+            <BookingCalendarClient bookedDatesSerialized={bookedDatesSerialized} />
         </div>
     );
 }

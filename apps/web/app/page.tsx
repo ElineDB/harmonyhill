@@ -10,7 +10,6 @@ import Availability from "@/components/Availability";
 import GoodToKnow from "@/components/GoodToKnow";
 import Faq from "@/components/Faq";
 import LeafDivider from "@/components/LeafDivider";
-import { Suspense } from 'react';
 
 export default function Home() {
     return (
@@ -24,12 +23,7 @@ export default function Home() {
                 <Explore />
                 <ReadyForParadise />
                 <LeafDivider />
-
-                {/* Loading booking data */}
-                <Suspense fallback={<div className="skeleton-loader">Loading dates...</div>}>
-                    <Availability />
-                </Suspense>
-                
+                <Availability />
                 <LeafDivider />
                 <GoodToKnow />
                 <Faq />
