@@ -1,0 +1,39 @@
+.floatingButton {
+    /* Position */
+    z-index: 1000;
+
+    width: 150px;
+    height: 60px;
+    
+    background-color: rgba(17, 72, 47, 0.9);
+
+    border-radius: 50px;
+    /* High radius creates the pill shape */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Soft shadow makes it pop off the page */
+    transition: transform 0.2s ease-in-out;
+    /* Smooth hover effect */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0.5rem;
+    padding: 0;
+}
+
+.floatingButton,
+.floatingButton a {
+    font-family: inherit;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.floatingButton:hover {
+    background-color: #8bb28e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
