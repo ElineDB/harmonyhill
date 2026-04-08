@@ -12,7 +12,7 @@ const images = [
     { src: "/images/nook-bed-view.jpeg",             width: 1248, height: 936,  alt: "bed with rice paddy views"                 },
     { src: "/images/nook-surrounded-by-nature.avif", width: 1200, height: 675,  alt: "secluded cottage surrounded by nature"     },
     { src: "/images/nook-bathroom-sink.jpeg",        width: 1440, height: 1080, alt: "stylish bathroom"                          },
-    { src: "/images/nook-bathroom-view.jpeg",        width: 1000, height: 750,  alt: "bathroom with copper bathtub and view"     },
+    { src: "/images/nook-bathroom-view.avif",        width: 1000, height: 750,  alt: "bathroom with copper bathtub and view"     },
     { src: "/images/nook-bath.jpeg",                 width: 1440, height: 960,  alt: "handmade copper bath tub with jungle view" },
     { src: "/images/nook-deck-view.avif",            width: 1200, height: 900,  alt: "wooden deck with rice paddy views"         },
     { src: "/images/nook-deck-breakfast-2.jpeg",     width: 1280, height: 960,  alt: "complimentary plantbased breakfast"        },
