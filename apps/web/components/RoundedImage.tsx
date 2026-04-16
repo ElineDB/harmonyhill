@@ -15,9 +15,9 @@ export default function RoundedImage({ src, alt, description }: ImageProps) {
             />
             {description && (
                 <div className={styles.caption}>
-                    <p>
+                    <span>
                         {description}
-                    </p>
+                    </span>
                 </div>
             )}
         </div>

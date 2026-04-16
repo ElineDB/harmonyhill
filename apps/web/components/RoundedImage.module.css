@@ -38,6 +38,13 @@
     z-index: 2;
 }
 
+.caption span {
+    display: inline-block;
+    padding: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
 .roundedImg .caption {
     position: absolute;
     /* Absolute inside a Relative parent */
@@ -50,7 +57,7 @@
     width: 100%;
 }
 
-.roundedImg .caption p {
+.roundedImg .caption span {
     margin-bottom: 0;
     bottom: 0 !important;
     font-size: 16px;

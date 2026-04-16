@@ -94,7 +94,7 @@
 }
 
 /* ✅ Responsive: On smaller screens */
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
     .mainNavLinks {
         display: none;
         /* Hide by default */
