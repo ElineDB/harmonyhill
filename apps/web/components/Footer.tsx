@@ -10,7 +10,7 @@ export default function Footer() {
 
     return (
         <div>
-            <section id="contact-us">
+            <section id="contact-us" className={styles.section}>
                 <h2 className="section-title">Contact Us</h2>
                 <div className="contact-us-text col-md-8">
                     <p><b>
@@ -47,7 +47,7 @@ export default function Footer() {
                 </div>
             </section>
 
-            <footer>
+            <footer className={styles.rights}>
                 <p>&copy; 2025 Harmony Hill. All rights reserved.</p>
             </footer>
         </div>

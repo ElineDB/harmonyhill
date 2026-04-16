@@ -7,7 +7,7 @@ import styles from "./Availability.module.css";
 
 export default function Availability() {
     return (
-        <section id="availability">
+        <section id="availability" className={styles.section}>
             <h2 className="section-title">Availability</h2>
             <p>
                 <strong>2 nights minimum stay</strong>
