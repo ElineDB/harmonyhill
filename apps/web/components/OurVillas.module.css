@@ -88,3 +88,9 @@
     height: 10rem;
     overflow-y: auto;
 }
+
+@media (max-width: 768px) {
+    .villaRow {
+        flex-direction: column;
+    }
+}
