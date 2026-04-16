@@ -11,6 +11,8 @@ interface BookingsProp {
 }
 
 export default function BookingCalendarClient({ bookedDatesSerialized } : BookingsProp) {
+    const today = new Date();
+    
     const bookedDates_ = bookedDatesSerialized.map((epoch) => new Date(epoch));
 
     const [selected, setSelected] = useState<DateRange>();
@@ -52,6 +54,7 @@ export default function BookingCalendarClient({ bookedDatesSerialized } : Bookin
             mode='range'
             className='rdp'
             disabled={disabledDays}
+            startMonth={today}
             onSelect={handleSelect}
             selected={selected}
             style={calendarStyle}
