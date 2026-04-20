@@ -45,6 +45,8 @@ export default function BookingCalendarClient({ bookedDatesSerialized } : Bookin
         }
     }
 
+    console.log(`Bookings: ${bookedDatesSerialized.length}`);
+
     const calendarStyle = {
         "--rdp-accent-color": "rgba(17, 72, 47, 0.9)",
     } as React.CSSProperties;

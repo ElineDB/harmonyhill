@@ -14,7 +14,7 @@ export default function Header() {
     return (
         <header className={styles.stickyBanner}>
             <nav className={styles.mainNav}>
-                <div className={styles.bookNowHeader}><Link href="https://harmonyhill.reserveonline.id/book/1245" target="_blank" rel="noopener">Book Now</Link></div>
+                <div className={styles.bookNowHeader}><Link href="/book" target="_blank" rel="noopener">Book Now</Link></div>
                 
                 <div className={styles.navLinksContainer}>
                     <ul className={`${styles.mainNavLinks} ${isOpen ? styles.active : ""}`} id="main-nav-links">

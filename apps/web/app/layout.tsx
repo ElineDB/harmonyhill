@@ -44,15 +44,10 @@ export const metadata: Metadata = {
     },
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
     return (
         <html lang="en">
             <GoogleTagManager gtmId="GTM-N5VDX2B4" />
-            
 
             <body className={`${geistSans.variable} ${geistMono.variable} ${quattrocento.className}`}>
                 <Header />
@@ -65,7 +60,7 @@ export default function RootLayout({
                 <div style={{ position: "fixed", right: "1rem", bottom: "1rem" }}>
                     <BookingButton />
                 </div>
-
+                
                 <div style={{ position: "fixed", left: "1rem", bottom: "4.5rem" }}>
                     <EmailButton />
                 </div>

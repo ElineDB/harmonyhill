@@ -1,0 +1,6 @@
+.sirvoyWidgetContainer {
+    min-height: 500px; /* Prevents the BookingPolicy from jumping up and down */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}

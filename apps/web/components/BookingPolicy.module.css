@@ -1,0 +1,14 @@
+.policyContent {
+    margin: 10px; 
+}
+
+.policyHeader {
+    text-align: start; 
+    padding-left: 1rem;
+}
+
+.policyBody {
+    padding-left: 1.5rem; 
+    margin-top: 0; 
+    font-size: 14px;
+}
