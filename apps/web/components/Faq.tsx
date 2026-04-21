@@ -38,6 +38,28 @@ export default function Faq() {
                                 href="https://wa.me/message/TVA3I5GFI5VLO1">WhatsApp</Link></u> to coordinate.</p>
                 </div>
             </details>
+
+            <details className="faqItem" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                <summary itemProp="name">Is your villa child friendly?</summary>
+                <div className="faqAnswer" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                    <p itemProp="text">
+                        Yes we absolutely love to welcome children 🙂 I would say about half our guests are families with children, 
+                        including little ones. There’s lots of fun activities to do around.
+                        There’s just a few things to consider:
+                        •⁠  ⁠Our villa is on a slope so the deck overlooks the pool below. You can see the railing 
+                        {" "}<Link href="https://harmonyhillbali.com/harmonyhill-gallery.html " target="_blank" className="white-link">here</Link>:
+                        •⁠  ⁠⁠The pool is not fenced off
+                        •⁠  ⁠Our garden flows seamlessly into the valley and surrounding nature. That means native Bali wildlife 
+                        can sometimes visit our garden as well. We have only seen one snake in the year that we have been open and 
+                        it wasn’t dangerous, but we want to call it out as encounters can always happen. 
+                        On the more fun side, we get lots of butterflies, squirrels and even fireflies at night. We also have 3 cats :)
+
+                        Every child is different so we want to give you the best information upfront so you can decide what feels right for your family 🙏😌
+
+                        We are happy to offer a childminding service (IDR 50K/hour). 
+                    </p>
+                </div>
+            </details>
         </section>
     )
 }
