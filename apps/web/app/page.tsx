@@ -38,7 +38,7 @@ export default function Home() {
                 <LazySection><ReadyForParadise /></LazySection>
                 <LazySection><LeafDivider /></LazySection>
                 {/* <LazySection><Availability /></LazySection> */}
-                <LazySection><LeafDivider /></LazySection>
+                {/* <LazySection><LeafDivider /></LazySection> */}
                 <LazySection><GoodToKnow /></LazySection>
                 <LazySection><Faq /></LazySection>
                 <FloatingButtons />

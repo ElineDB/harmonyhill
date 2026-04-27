@@ -24,7 +24,7 @@ export default function Header() {
                         <li onClick={() => setIsOpen(false)}><Link href="/#stay-in">Stay In</Link></li>
                         <li onClick={() => setIsOpen(false)}><Link href="/#explore">Explore</Link></li>
                         <li onClick={() => setIsOpen(false)}><Link href="/#goodtoknow">Good To Know</Link></li>
-                        <li onClick={() => setIsOpen(false)}><Link href="/#availability">Availability</Link></li>
+                        {/* <li onClick={() => setIsOpen(false)}><Link href="/#availability">Availability</Link></li> */}
                     </ul>
                 </div>
 
