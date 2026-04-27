@@ -1,6 +1,14 @@
 'use client';
 
 import Gallery from "@/components/Gallery";
+import FloatingButtons from "@/components/FloatingButtons";
+
+export const metadata = {
+    title: 'Harmony Hill Gallery | Harmony Hill Bali',
+    alternates: {
+        canonical: '/harmonyhill-gallery',
+    },
+}
 
 const images = [
     { src: "/images/infinity-pool-jungle-view.avif",  width: 1200, height: 900,  alt: "infinity pool with jungle valley view"                   },
@@ -37,6 +45,7 @@ export default function HarmonyHillGallery() {
     return (
         <main>
             <Gallery title={"Harmony Hill Gallery"} images={images} />
+            <FloatingButtons />
         </main>
     )
 }

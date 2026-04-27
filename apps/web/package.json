@@ -11,12 +11,13 @@
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
+    "@harmonyhill/database": "*",
+    "@harmonyhill/utils": "*",
     "@repo/ui": "*",
     "next": "16.1.5",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "@harmonyhill/database": "*",
-    "@harmonyhill/utils": "*"
+    "react-intersection-observer": "^10.0.3"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

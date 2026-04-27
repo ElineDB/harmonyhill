@@ -1,6 +1,14 @@
 'use client';
 
 import Gallery from "@/components/Gallery";
+import FloatingButtons from "@/components/FloatingButtons";
+
+export const metadata = {
+    title: 'The Jungle Nook Gallery | Harmony Hill Bali',
+    alternates: {
+        canonical: '/junglenook-gallery',
+    },
+}
 
 const images = [
     { src: "/images/nook-deck-breakfast-1.avif",     width: 1440, height: 1080, alt: "wooden deck with jungle valley views"      },
@@ -29,6 +37,7 @@ export default function JungleNookGallery() {
     return (
         <main>
             <Gallery title={"The Jungle Nook Gallery"} images={images} />
+            <FloatingButtons />
         </main>
     )
 }
