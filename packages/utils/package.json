@@ -2,15 +2,26 @@
     "name": "@harmonyhill/utils",
     "version": "0.0.1",
     "private": true,
-    "main": "./index.ts",
-    "types": "./index.ts",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "files": [
+        "dist"
+    ],
     "scripts": {
-        "lint": "eslint ."
+        "build": "tsc"
     },
     "dependencies": {
         "luxon": "^3.0.0"
     },
     "devDependencies": {
-        "@types/luxon": "^3.0.0"
+        "@types/luxon": "^3.0.0",
+        "typescript": "^5.0.0"
     }
 }
