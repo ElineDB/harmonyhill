@@ -1,7 +1,6 @@
 import ICAL from 'ical.js';
-import * as utils from "@harmonyhill/shared/utils.js";
-//const utils = await import("@harmonyhill/shared/utils.js");
-import { makeAdapter } from "../db-adapter.js";
+import * as utils from "@harmonyhill/utils";
+import { makeAdapter } from "@harmonyhill/database";
 
 export function parseICal(rawICalData) {
     const jcalData = ICAL.parse(rawICalData);

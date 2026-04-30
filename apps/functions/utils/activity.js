@@ -1,5 +1,5 @@
-import * as utils from "@harmonyhill/shared/utils.js";
-//import { makeAdapter } from "../db-adapter.js";
+import * as utils from "@harmonyhill/utils";
+//import { makeAdapter } from "@harmonyhill/database";
 
 export function createService(booking = null, subCategory = null) {
     const serviceActivity = {

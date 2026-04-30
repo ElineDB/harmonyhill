@@ -2,8 +2,8 @@ import { onSchedule } from "firebase-functions/v2/scheduler";
 import { onDocumentCreated } from "firebase-functions/v2/firestore";
 import * as activityUtils from "../utils/activity.js";
 import * as bookingUtils from "../utils/booking.js";
-import * as utils from "@harmonyhill/shared/utils.js";
-import { makeAdapter } from "../db-adapter.js";
+import * as utils from "@harmonyhill/utils";
+import { makeAdapter } from "@harmonyhill/database";
 
 /**
  * '0 0 * * *' => runs at midnight, every day, every month, every day of the week

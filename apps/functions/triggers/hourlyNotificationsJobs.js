@@ -1,6 +1,6 @@
 import { onSchedule } from "firebase-functions/v2/scheduler";
-import * as utils from "@harmonyhill/shared/utils.js";
-import { makeAdapter } from "../db-adapter.js";
+import * as utils from "@harmonyhill/utils";
+import { makeAdapter } from "@harmonyhill/database";
 
 // Upload count of activities which still need more information (providers missing, etc)
 export const hourlyJob = onSchedule("every 60 minutes", async (event) => {

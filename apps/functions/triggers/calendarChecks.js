@@ -1,7 +1,7 @@
 import * as bookingUtils from "../utils/booking.js";
 import * as config from "../config/config.js";
-import * as utils from "@harmonyhill/shared/utils.js";
-import { makeAdapter } from "../db-adapter.js";
+import * as utils from "@harmonyhill/utils";
+import { makeAdapter } from "@harmonyhill/database";
 import { onSchedule } from "firebase-functions/v2/scheduler";
 
 // Upload calendar comparison result which compares booking.com & airbnb to our own internal calendar

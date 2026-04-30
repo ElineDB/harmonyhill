@@ -2,9 +2,8 @@ import { onRequest } from "firebase-functions/v2/https";
 import * as calChecks from "../triggers/calendarChecks.js";
 import * as calUtils from "../utils/booking.js";
 import * as config from "../config/config.js";
-import * as utils from "@harmonyhill/shared/utils.js";
-//const utils = await import("@harmonyhill/shared/utils.js");
-import { makeAdapter } from "../db-adapter.js";
+import * as utils from "@harmonyhill/utils";
+import { makeAdapter } from "@harmonyhill/database";
 
 // http://localhost:5001/harmonyhill-1/us-central1/calendars-check
 export const check = onRequest(async (req, res) => {

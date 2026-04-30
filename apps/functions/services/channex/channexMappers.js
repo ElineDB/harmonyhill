@@ -1,3 +1,5 @@
+import { makeAdapter } from "@harmonyhill/database";
+
 // put under the settings collection, in a sub document
 const hhDescription = "Our little piece of paradise located halfway between Ubud and Batur. Step onto your private deck, greeted by wide valley views of vibrant rice fields and coconut trees. Savour nourishing plant-based foods. Make your way down the valley to a hidden waterfall or enjoy your private infinity pool overlooking the jungle. Homemade lunch & dinner are available, as well as massage, yoga and more...";
 
