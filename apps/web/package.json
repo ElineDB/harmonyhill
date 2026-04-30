@@ -11,8 +11,8 @@
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "@harmonyhill/utils": "file:../../.deploy-packages/harmonyhill-utils.tgz",
-    "@harmonyhill/database": "file:../../.deploy-packages/harmonyhill-database.tgz",  
+    "@harmonyhill/utils": "*",
+    "@harmonyhill/database": "*",
     "next": "16.2.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

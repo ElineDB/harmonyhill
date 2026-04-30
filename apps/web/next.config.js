@@ -11,8 +11,7 @@ const nextConfig = {
     outputFileTracingRoot: path.join(__dirname, '../../'),
     // experimental: {turbo: false},
     transpilePackages: [
-        "@harmonyhill/firebase-config", 
-        // "@harmonyhill/database", 
+        "@harmonyhill/database", 
         "@harmonyhill/utils"
     ],
     async redirects() {

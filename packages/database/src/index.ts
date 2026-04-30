@@ -1,4 +1,5 @@
 
+import "server-only";
 import * as utils from '@harmonyhill/utils';
 import { getDownloadURL } from "firebase-admin/storage";
 import { getDb, getStorageClient } from "./firebase.js";
