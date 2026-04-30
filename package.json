@@ -1,38 +1,46 @@
 {
-  "name": "harmonyhill",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "emulators": "firebase emulators:start --import=./emulator-data",
-    "all": "turbo run dev & firebase emulators:start --import=./emulator-data",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
-  },
-  "devDependencies": {
-    "prettier": "^3.7.4",
-    "turbo": "^2.8.16",
-    "typescript": "5.9.2"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "npm@10.9.2",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "dependencies": {
-    "@next/third-parties": "^16.2.2",
-    "date-fns": "^4.1.0",
-    "embla-carousel-autoplay": "^8.6.0",
-    "embla-carousel-react": "^8.6.0",
-    "lucide-react": "^0.577.0",
-    "luxon": "^3.7.2",
-    "react-day-picker": "^9.14.0",
-    "react-icons": "^5.6.0",
-    "react-photo-album": "^3.5.1",
-    "yet-another-react-lightbox": "^3.29.1"
-  }
+    "name": "harmonyhill",
+    "private": true,
+    "scripts": {
+        "build": "turbo run build",
+        "dev": "turbo run dev",
+        "emulators": "firebase emulators:start --import=./emulator-data",
+        "all": "turbo run dev & firebase emulators:start --import=./emulator-data",
+        "lint": "turbo run lint",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "check-types": "turbo run check-types",
+       
+        "build:packages": "npm run build --workspace=@harmonyhill/utils && npm run build --workspace=@harmonyhill/database",
+        "pack:web" : "npm pack --workspace=@harmonyhill/utils --pack-destination apps/web && npm pack --workspace=@harmonyhill/database --pack-destination apps/web",
+        "pack:functions": "npm pack --workspace=@harmonyhill/utils --pack-destination apps/functions && npm pack --workspace=@harmonyhill/database --pack-destination apps/functions",
+        "normalize:web": "mv apps/web/harmonyhill-utils-*.tgz apps/web/harmonyhill-utils.tgz && mv apps/web/harmonyhill-database-*.tgz apps/web/harmonyhill-database.tgz",
+        "normalize:functions": "mv apps/functions/harmonyhill-utils-*.tgz apps/functions/harmonyhill-utils.tgz && mv apps/functions/harmonyhill-database-*.tgz apps/functions/harmonyhill-database.tgz",
+        "prep:packages" : "npm run build:packages && npm run pack:web && npm run normalize:web && npm run pack:functions && npm run normalize:functions",
+        "deploy:functions": "npm run prep:packages && firebase deploy --only functions"
+    },
+    "devDependencies": {
+        "prettier": "^3.7.4",
+        "turbo": "^2.8.16",
+        "typescript": "5.9.2"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "packageManager": "npm@10.9.2",
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "dependencies": {
+        "@next/third-parties": "^16.2.2",
+        "date-fns": "^4.1.0",
+        "embla-carousel-autoplay": "^8.6.0",
+        "embla-carousel-react": "^8.6.0",
+        "lucide-react": "^0.577.0",
+        "luxon": "^3.7.2",
+        "react-day-picker": "^9.14.0",
+        "react-icons": "^5.6.0",
+        "react-photo-album": "^3.5.1",
+        "yet-another-react-lightbox": "^3.29.1"
+    }
 }

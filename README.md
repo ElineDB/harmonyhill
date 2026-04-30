@@ -2,6 +2,12 @@
 
 This Turborepo starter is maintained by the Turborepo core team.
 
+# Secrets
+- save your secrets at https://console.cloud.google.com/security/secret-manager?project=harmonyhill-1
+
+# Test packages
+- node -e "import('@harmonyhill/utils').then(m => console.log('ok'))"
+
 ## Using this example
 
 Run the following command:
