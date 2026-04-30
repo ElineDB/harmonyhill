@@ -90,7 +90,7 @@ export default function OurVillas() {
 
                     <div className={styles.seeMoreText}>
                         <br />
-                        <Link href="/harmonyhill-gallery">See more from the Harmony Hill gallery &rarr;</Link>
+                        <Link href="/harmonyhill-gallery">See more photos in the Harmony Hill gallery &rarr;</Link>
                     </div>
                 </div>
 
@@ -142,7 +142,7 @@ export default function OurVillas() {
 
                     <div className={styles.seeMoreText}>
                         <br />
-                        <Link href="/junglenook-gallery">See more from the Jungle Nook gallery &rarr;</Link>
+                        <Link href="/junglenook-gallery">See more photos in the Jungle Nook gallery &rarr;</Link>
                     </div>
                 </div>
 

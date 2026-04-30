@@ -11,4 +11,5 @@ runConfig:
 
 scripts:
   # This tells Firebase how to build your site from within the monorepo folder
-  buildCommand: npm run build
+  buildCommand:
+    npm run build --workspace=apps/web --webpack

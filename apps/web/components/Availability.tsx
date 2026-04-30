@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import BookingCalendar from './BookingCalendar';
+//import BookingCalendar from './BookingCalendar';
 import { Suspense } from 'react';
 import BookingButton from './BookingButton';
 import WhatsAppButton from './WhatsAppButton';
@@ -23,13 +23,13 @@ export default function Availability() {
             </div>
             <div className={styles.calendarsRowWrapper}>
                 {/* Loading booking data asynchronously in the server */}
-                <Suspense fallback={<div className="skeleton-loader">Loading dates...</div>}>
+                {/* <Suspense fallback={<div className="skeleton-loader">Loading dates...</div>}>
                     <BookingCalendar title="Harmony Hill" />
                 </Suspense>
 
                 <Suspense fallback={<div className="skeleton-loader">Loading dates...</div>}>
                     <BookingCalendar title="The Jungle Nook" />
-                </Suspense>
+                </Suspense> */}
             </div>
             <div className={styles.subCalButtons}>
                 <BookingButton />

@@ -1,6 +1,5 @@
 import styles from "./page.module.css";
 import LazySection from "@/components/LazySection";
-import dynamic from 'next/dynamic';
 import HeroVideo from "@/components/HeroVideo";
 import AboutUs from "@/components/AboutUs";
 import OurVillas from "@/components/OurVillas";
@@ -10,7 +9,6 @@ import Explore from "@/components/Explore";
 import ReadyForParadise from "@/components/ReadyForParadise";
 import GoodToKnow from "@/components/GoodToKnow";
 import Faq from "@/components/Faq";
-//import Availability from "@/components/Availability";
 import LeafDivider from "@/components/LeafDivider";
 import FloatingButtons from "@/components/FloatingButtons";
 
@@ -30,7 +28,7 @@ export default function Home() {
             <main className={styles.main}>
                 <HeroVideo />
                 <AboutUs />
-                
+
                 <LazySection><OurVillas /></LazySection>
                 <LazySection><NaturesKitchen /></LazySection>
                 <LazySection><StayIn /></LazySection>

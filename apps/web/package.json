@@ -11,10 +11,10 @@
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "@harmonyhill/database": "*",
-    "@harmonyhill/utils": "*",
+    "@harmonyhill/utils": "file:./harmonyhill-utils.tgz",
+    "@harmonyhill/database": "file:./harmonyhill-database.tgz",
     "@repo/ui": "*",
-    "next": "16.1.5",
+    "next": "16.2.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-intersection-observer": "^10.0.3"

@@ -12,7 +12,7 @@ const nextConfig = {
     // experimental: {turbo: false},
     transpilePackages: [
         "@harmonyhill/firebase-config", 
-        "@harmonyhill/database", 
+        // "@harmonyhill/database", 
         "@harmonyhill/utils"
     ],
     async redirects() {
