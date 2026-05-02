@@ -1,6 +1,7 @@
 {
-    "extends": "../../tsconfig.base.json",
+    "extends": "../../tsconfig.node.json",
     "compilerOptions": {
+        "composite": true,
         "outDir": "dist",
         "rootDir": "src",
         "target": "ES2022",
@@ -9,6 +10,9 @@
         ],
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
+        "types": [
+            "node"
+        ],
         "declaration": true,
         "esModuleInterop": true,
         "strict": false

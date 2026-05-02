@@ -9,16 +9,16 @@
         "lint": "turbo run lint",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "check-types": "turbo run check-types",
-       
         "build:packages": "npm run build --workspace=@harmonyhill/utils && npm run build --workspace=@harmonyhill/database",
-        "pack:web" : "npm pack --workspace=@harmonyhill/utils --pack-destination apps/web && npm pack --workspace=@harmonyhill/database --pack-destination apps/web",
+        "pack:web": "npm pack --workspace=@harmonyhill/utils --pack-destination apps/web && npm pack --workspace=@harmonyhill/database --pack-destination apps/web",
         "pack:functions": "npm pack --workspace=@harmonyhill/utils --pack-destination apps/functions && npm pack --workspace=@harmonyhill/database --pack-destination apps/functions",
         "normalize:web": "mv apps/web/harmonyhill-utils-*.tgz apps/web/harmonyhill-utils.tgz && mv apps/web/harmonyhill-database-*.tgz apps/web/harmonyhill-database.tgz",
         "normalize:functions": "mv apps/functions/harmonyhill-utils-*.tgz apps/functions/harmonyhill-utils.tgz && mv apps/functions/harmonyhill-database-*.tgz apps/functions/harmonyhill-database.tgz",
-        "prep:packages" : "npm run build:packages && npm run pack:web && npm run normalize:web && npm run pack:functions && npm run normalize:functions",
+        "prep:packages": "npm run build:packages && npm run pack:web && npm run normalize:web && npm run pack:functions && npm run normalize:functions",
         "deploy:functions": "npm run prep:packages && firebase deploy --only functions"
     },
     "devDependencies": {
+        "@types/node": "^25.6.0",
         "prettier": "^3.7.4",
         "turbo": "^2.8.16",
         "typescript": "5.9.2"
