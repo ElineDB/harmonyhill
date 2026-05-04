@@ -11,8 +11,8 @@ const nextConfig = {
     outputFileTracingRoot: path.join(__dirname, '../../'),
     // experimental: {turbo: false},
     transpilePackages: [
-        "@harmonyhill/database", 
-        "@harmonyhill/utils"
+        "@harmonyhill/utils",
+        "@harmonyhill/database"
     ],
     async redirects() {
         return [{
